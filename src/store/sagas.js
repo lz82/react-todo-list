@@ -8,7 +8,6 @@ function* funGetTodoList () {
   try {
     const list = yield getTodoList()
     const action = actionCreator.createInitTodoList(list)
-    console.log(list)
     yield put(action)
   } catch (e) {
     console.log(e.toString())
@@ -19,4 +18,4 @@ function* mySaga() {
   yield takeEvery(actionType.GET_TODO_LIST, funGetTodoList)
 }
 
-export default mySaga;
+export default mySaga
