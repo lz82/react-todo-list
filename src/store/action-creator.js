@@ -1,13 +1,8 @@
 import * as actionType from './action-type'
 
-import { getTodoList } from '../service/index'
-
-
 const createGetTodoList = () => {
-  return async (dispatch) => {
-    const list = await getTodoList()
-    const action = createInitTodoList(list)
-    dispatch(action)
+  return {
+    type: actionType.GET_TODO_LIST
   }
 }
 

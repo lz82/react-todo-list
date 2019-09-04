@@ -5,8 +5,6 @@ import * as actionCreator from '../store/action-creator'
 
 import TodoListUI from './todo-list-ui'
 
-// import { getTodoList } from '../service/index'
-
 import './index.css'
 
 export default class TodoList extends Component {
@@ -36,10 +34,8 @@ export default class TodoList extends Component {
   }
 
   async componentDidMount () {
-    // const list = await getTodoList()
-    // const action = actionCreator.createInitTodoList(list)
-    // store.dispatch(action)
-    store.dispatch(actionCreator.createGetTodoList())
+    const action = actionCreator.createGetTodoList()
+    store.dispatch(action)
   }
 
   render () {
