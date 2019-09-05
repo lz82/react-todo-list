@@ -1,6 +1,13 @@
-import { createStore } from 'redux'
-import reducer from './reducer'
+import { createStore, compose, combineReducers } from 'redux'
 
-const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__())
+import { todoListReducer } from '../todo-list/store'
+
+const reducer = combineReducers({
+  todoList: todoListReducer
+})
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+
+const store = createStore(reducer, composeEnhancers())
 
 export default store
