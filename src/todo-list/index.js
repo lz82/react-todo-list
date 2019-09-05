@@ -42,9 +42,10 @@ class TodoList extends Component {
 }
 
 const mapStateToProps = state => {
+  console.log(state)
   return {
-    todoItem: state.todoList.inputVal,
-    list: state.todoList.list
+    todoItem: state.getIn(['todoList', 'inputVal']),
+    list: state.getIn(['todoList', 'list'])
   }
 }
 

@@ -1,4 +1,5 @@
-import { createStore, compose, combineReducers } from 'redux'
+import { createStore, compose } from 'redux'
+import { combineReducers } from 'redux-immutable'
 
 import { todoListReducer } from '../todo-list/store'
 
